@@ -44,4 +44,34 @@ public class Evento {
     public ArrayList<Galeria> getGalerias() {
         return galerias;
     }
+
+    //setters
+    public void setId(int id) { 
+        this.id = id;
+    }
+    
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    public void setGalerias(ArrayList<Galeria> galerias) {
+        this.galerias = galerias;
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Evento: " + titulo + ", Fecha: " + fecha + ", Ubicación: " + ubicacion + ", Descripción: " + descripcion;
+    }
+    
 }
