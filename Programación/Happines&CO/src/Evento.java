@@ -74,4 +74,5 @@ public class Evento {
         return "Evento: " + titulo + ", Fecha: " + fecha + ", Ubicación: " + ubicacion + ", Descripción: " + descripcion;
     }
     
-}
+    
+    }
