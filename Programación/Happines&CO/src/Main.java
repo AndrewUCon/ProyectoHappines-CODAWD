@@ -38,20 +38,7 @@ public class Main {
                 
                 // Opción 1:  Añadir Usuario
                 case 1: 
-                    System.out.print("Ingrese el nombre del usuario: ");
-                    String nombre = scanner.nextLine();
-                    System.out.print("Ingrese el email: ");
-                    String email = scanner.nextLine();
-                    System.out.print("Ingrese la contraseña: ");
-                    String password = scanner.nextLine();
-
-                    if (usuarios.containsKey(email)) {
-                        System.out.println("Error: El usuario ya existe.");
-                    } else {
-                        Usuario nuevoUsuario = new Usuario(nombre, email, password);
-                        usuarios.put(email, nuevoUsuario);
-                        System.out.println("Usuario creado exitosamente.");
-                    }                    
+                     Usuario.registrarUsuario(scanner, usuarios);               
                     break;
 
                 // Opción 2:Eliminar Usuario

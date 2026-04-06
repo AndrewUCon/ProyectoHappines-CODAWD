@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.Scanner;
+
 public class Usuario {
 
     // Atributos
@@ -42,5 +45,23 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario: " + nombre + ", Email: " + email;
+    }
+
+    // Metodo para crear un nuevo usuario
+    public static void registrarUsuario(Scanner scanner, Map<String, Usuario> usuarios) {
+        System.out.print("Ingrese el nombre del usuario: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Ingrese el email: ");
+        String email = scanner.nextLine();
+        System.out.print("Ingrese la contraseña: ");
+        String password = scanner.nextLine();
+
+        if (usuarios.containsKey(email)) {
+            System.out.println("Error: El usuario ya existe.");
+        } else {
+            Usuario nuevoUsuario = new Usuario(nombre, email, password);
+            usuarios.put(email, nuevoUsuario);
+            System.out.println("Usuario creado exitosamente.");
+        }
     }
 }
