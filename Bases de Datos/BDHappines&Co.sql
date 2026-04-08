@@ -129,3 +129,30 @@ INSERT INTO Imagenes (Titulo, imagen, ID_Galeria) VALUES
 ('Foto 4 - Gasolina Con Capullos', 'Foto4_Gasolina.jpg', 3);
 GO
 
+
+-- ==========================
+-- Insertar Favoritos (Cada usuario tiene al menos 3 eventos favoritos (y al menos 2 eventos del historial))
+-- ==========================
+
+-- Usuario 1 - (Andrés) favoritos: 1, 2, 4
+INSERT INTO Favoritos (ID_Usuario, ID_Evento) VALUES
+(1, 1),
+(1, 2),
+(1, 4);
+GO
+
+-- Usuario 2 - (Anabel) favoritos: 2, 3, 5  
+INSERT INTO Favoritos (ID_Usuario, ID_Evento) VALUES
+(2, 2),
+(2, 3),
+(2, 5);
+GO
+
+-- Usuario 3 - (Ana) favoritos: 1, 3, 6
+INSERT INTO Favoritos (ID_Usuario, ID_Evento) VALUES
+(3, 1),
+(3, 3),
+(3, 6);
+GO
+
+-- Para el siguiente dia hay que terminar las vistas y asi acabamos con la base de Datos.
