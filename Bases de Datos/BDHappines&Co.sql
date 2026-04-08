@@ -92,3 +92,40 @@ INSERT INTO Eventos (Fecha, Titulo, Ubicacion, Descripcion) VALUES
 ('2026-06-15', 'Exposición: Dalí y el Surrealismo', 'Museo Barjola, Gijón', 'Retroespectiva de la obra de Salvador Dalí con más de 80 piezas originales procedentes de museos de todo el mundo.'),
 ('2026-06-25', 'Cliclo de Cine Radar: La Tortuga', 'Teatro Campoamos', 'Disfruta de una noche de cine en el teatro Campoamor.');
 GO
+
+-- ==========================
+-- Insertar Galerías (Los tres eventos del historial tiene una galeria)
+-- ==========================
+
+INSERT INTO Galerias (Titulo, ID_Evento) VALUES
+('Galería Regreso a los 80s Original', 1),
+('Galería MUSCOC: Proyección de Mosquitoes (Les Bambines)', 2),
+('Galería Gasolina Con Capullos', 3);
+GO
+
+-- ==========================
+-- Insertar Imágenes (Cada galería tiene al menos 3 imágenes)
+-- ==========================
+
+-- Galeria 1 - Regreso a los 80s Original
+INSERT INTO Imagenes (Titulo, imagen, ID_Galeria) VALUES
+('Foto 1 - Regreso a los 80s Original', 'Foto1_Regreso80.jpg', 1),
+('Foto 2 - Regreso a los 80s Original', 'Foto2_Regreso80.jpg', 1),
+('Foto 3 - Regreso a los 80s Original', 'Foto3_Regreso80.jpg', 1);
+GO
+
+-- Galeria 2 - MUSCOC: Proyección de Mosquitoes (Les Bambines)
+INSERT INTO Imagenes (Titulo, imagen, ID_Galeria) VALUES
+('Foto 1 - MUSCOC: Proyección de Mosquitoes (Les Bambines)', 'Foto1_Mosquitoes.jpg', 2),
+('Foto 2 - MUSCOC: Proyección de Mosquitoes (Les Bambines)', 'Foto2_Mosquitoes.jpg', 2),
+('Foto 3 - MUSCOC: Proyección de Mosquitoes (Les Bambines)', 'Foto3_Mosquitoes.jpg', 2);
+GO
+
+--Galeria 3 - Gasolina Con Capullos
+INSERT INTO Imagenes (Titulo, imagen, ID_Galeria) VALUES
+('Foto 1 - Gasolina Con Capullos', 'Foto1_Gasolina.jpg', 3),
+('Foto 2 - Gasolina Con Capullos', 'Foto2_Gasolina.jpg', 3),
+('Foto 3 - Gasolina Con Capullos', 'Foto3_Gasolina.jpg', 3),
+('Foto 4 - Gasolina Con Capullos', 'Foto4_Gasolina.jpg', 3);
+GO
+
