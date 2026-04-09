@@ -155,4 +155,39 @@ INSERT INTO Favoritos (ID_Usuario, ID_Evento) VALUES
 (3, 6);
 GO
 
--- Para el siguiente dia hay que terminar las vistas y asi acabamos con la base de Datos.
+-- ==========================
+-- VISTAS
+-- ==========================
+
+-- Vista 1: Galerías anteriores al 28-02-2026.
+CREATE VIEW Galerias_Historial AS
+SELECT g.ID, g.Titulo AS titulo_Galeria, e.Titulo AS titulo_Evento, e.Fecha
+FROM Galerias g
+JOIN Eventos e ON g.ID_Evento = e.ID
+WHERE e.Fecha < '2026-02-28';
+GO
+
+-- Vista 2: Eventos favoridos del usuario 1 (Andrés).
+CREATE VIEW Favoritos_Usuario1 AS
+SELECT e.ID, e.Titulo, e.Fecha, e.Ubicacion
+FROM Favoritos f
+JOIN Eventos e ON f.ID_Evento = e.ID
+WHERE f.ID_Usuario = 1;
+GO
+
+-- Vista 3: Imágenes de la galeria del evento del 12-01-2026.
+CREATE VIEW Imagenes_Evento_2 AS
+SELECT i.ID, i.Titulo AS titulo_Imagen, i.imagen, g.Titulo AS titulo_Galeria
+FROM Imagenes i
+JOIN Galerias g ON i.ID_Galeria = g.ID
+WHERE g.ID_Evento = 2;
+GO
+
+-- Vista 4: Eventos favoritos del usuario 2 (Anabel) posteriores al 28-02-2026.
+CREATE VIEW Favoritos_Usuario2_Proximos AS
+SELECT e.ID, e.Titulo, e.Fecha, e.Ubicacion, e.Descripcion
+FROM Favoritos f
+JOIN Eventos e ON f.ID_Evento = e.ID
+WHERE f.ID_Usuario = 2 AND e.Fecha > '2026-02-28';
+GO  
+
