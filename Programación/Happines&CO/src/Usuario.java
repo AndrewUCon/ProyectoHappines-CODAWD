@@ -64,4 +64,17 @@ public class Usuario {
             System.out.println("Usuario creado exitosamente.");
         }
     }
+
+    // Metodo para eliminar un usuario
+    public static void eliminarUsuario(Scanner scanner, Map<String, Usuario> usuarios) {
+        System.out.print("Ingrese el email del usuario a eliminar: ");
+        String emailEliminar = scanner.nextLine();
+        if (usuarios.containsKey(emailEliminar)) {
+            usuarios.remove(emailEliminar);
+            System.out.println("Usuario eliminado Correctamente.");
+        } else {
+            System.out.println("Error: El usuario no existe.");
+        }
+
+    }   
 }

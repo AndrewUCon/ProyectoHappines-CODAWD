@@ -43,14 +43,7 @@ public class Main {
 
                 // Opción 2:Eliminar Usuario
                 case 2: 
-                    System.out.print("Ingrese el email del usuario a eliminar: ");
-                    String emailEliminar = scanner.nextLine();
-                    if (usuarios.containsKey(emailEliminar)) {
-                        usuarios.remove(emailEliminar);
-                        System.out.println("Usuario eliminado Correctamente.");
-                    } else {
-                        System.out.println("Error: El usuario no existe.");
-                    }
+                    Usuario.eliminarUsuario(scanner, usuarios);         
                     break;
                 
                 // Opción 3: Añadir Evento
