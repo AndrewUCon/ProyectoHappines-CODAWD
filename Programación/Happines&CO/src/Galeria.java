@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Galeria {
 
     //Atributos
@@ -42,6 +44,14 @@ public class Galeria {
     @Override
     public String toString() {
         return "Galeria: " + titulo + " (ID: " + id + ", Evento ID: " + idEvento + ")";
+    }
+    
+
+    // Método para añadir galeria
+    public static Galeria añadirGaleria (Scanner scanner, int idGaleria, int idEvento) {
+        System.out.print("Ingrese el título de la galería: ");
+        String titulo = scanner.nextLine();
+        return new Galeria(idGaleria, titulo, idEvento);
     }
 
     

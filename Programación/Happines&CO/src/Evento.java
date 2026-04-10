@@ -88,6 +88,16 @@ public class Evento {
         return new Evento(id, fecha, titulo, ubicacion, descripcion);
 
     }
-    
-    
+
+    // Métetodo para mostrar los eventos
+    public static void mostrarEventos(ArrayList<Evento> eventos) {
+        if (eventos.isEmpty()) {
+            System.out.println("No hay eventos disponibles.");
+        } else {
+            System.out.println("Eventos disponibles:");
+            for (Evento evento : eventos) {
+                System.out.println("ID: " + evento.getId() + " | " + evento.getTitulo() + " | " + evento.getFecha());
+            }
+        }
     }
+}

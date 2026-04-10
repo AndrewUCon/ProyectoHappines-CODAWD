@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     // Colecciones para almacenar usuarios, eventos y favoritos
@@ -58,49 +59,13 @@ public class Main {
                 // Opción 4: Eliminar Evento
                 case 4: 
                     
-                    if (eventos.isEmpty()) {
-                        System.out.println("No hay eventos registrados.");
-                        break;
-                    } 
-                    System.out.println("\n ============= Lista de Eventos =============");
-                    for (Evento evento : eventos.values()) {
-                        System.out.println("ID: " + evento.getId() + " | " + evento.getTitulo() + " | " + evento.getFecha());
-                    }
-                    System.out.print("Ingrese el ID del evento a eliminar: ");
-                    int idEliminarEvento = scanner.nextInt();
-                    scanner.nextLine(); 
-                    if (eventos.containsKey(idEliminarEvento)) {
-                        eventos.remove(idEliminarEvento);
-                        System.out.println("Evento eliminado correctamente.");
-                    } else {
-                        System.out.println("Error: El evento no existe.");
-                    }
+                    eliminarEvento(eventos, contadorEventos, scanner);
+                    break;
 
                     // Opción 5: Añadir galería
                     case 5: 
-                    if (eventos.isEmpty()) {
-                        System.out.println("No hay eventos registrados.");
+                        añadirGaleriaEvento(scanner, eventos);
                         break;
-                    }
-
-                    System.out.println("\n ============= Lista de Eventos =============");
-                    for (Evento evento : eventos.values()) {
-                        System.out.println("ID: " + evento.getId() + " | " + evento.getTitulo() + " | " + evento.getFecha());
-                    }
-                    System.out.println("Ingrese el ID del evento al que desea añadir una galería: ");
-                    int idEventoGaleria = scanner.nextInt();
-                    scanner.nextLine(); 
-
-                    if (eventos.containsKey(idEventoGaleria)) {
-                        System.out.print("Ingrese el título de la galería: ");
-                        String tituloGaleria = scanner.nextLine();
-                        contadorGalerias++;
-                        Galeria nuevaGaleria = new Galeria(contadorGalerias, tituloGaleria, idEventoGaleria);
-                        eventos.get(idEventoGaleria).getGalerias().add(nuevaGaleria);
-                        System.out.println("Galería añadida exitosamente al evento.");
-                    } else {
-                        System.out.println("Error: El evento no existe.");
-                    }
 
                 // Opción 6: Eliminar galería
                 case 6:
@@ -226,8 +191,48 @@ public class Main {
         } while (opcion != 9);
 
 
-    }    
-        
-        
-        
+    }   
+    
+    // Método para eliminar un Evento
+    public static void eliminarEvento(HashMap<Integer, Evento> eventos, int id, Scanner scanner) {
+        if (eventos.isEmpty()) {
+            System.out.println("No hay eventos registrados.");
+            return;
+        }
+        Evento.mostrarEventos(new ArrayList<>(eventos.values()));
+
+        System.out.print("Ingrese el ID del evento a eliminar: "); 
+        int idEliminarEvento = scanner.nextInt(); 
+        scanner.nextLine();
+
+        if (eventos.containsKey(idEliminarEvento)) {
+            eventos.remove(idEliminarEvento);
+            System.out.println("Evento eliminado correctamente.");
+            } else {
+                System.out.println("Error: El evento no existe.");
+            }
+    }
+
+    public static void añadirGaleriaEvento (Scanner scanner, Map<Integer, Evento> eventos) {
+            if (eventos.isEmpty()) {
+                System.out.println("No hay eventos registrados.");
+                return;
+            }
+    
+            Evento.mostrarEventos(new ArrayList<>(eventos.values()));
+
+            System.out.print("Ingrese el ID del evento al que desea añadir una galería: ");
+            int idEventoGaleria = scanner.nextInt();
+            scanner.nextLine();
+
+            if (eventos.containsKey(idEventoGaleria)) {
+                contadorGalerias++;
+                Galeria nuevaGaleria = Galeria.añadirGaleria(scanner, contadorGalerias, idEventoGaleria);
+                eventos.get(idEventoGaleria).getGalerias().add(nuevaGaleria);
+                System.out.println("Galería añadida exitosamente al evento.");
+            } else {
+                System.out.println("Error: El evento no existe.");
+            }
+
+    }
 }
