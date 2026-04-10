@@ -35,5 +35,9 @@ public class Favorito {
         return "Favorito: Usuario " + correoUsuario + " - Evento ID: " + idEvento;
     }
 
+    // Método para crear un nuevo favorito
+    public static Favorito crearFavorito(String correoUsuario, int idEvento) {
+        return new Favorito(correoUsuario, idEvento);
+    }
 
 }

@@ -70,33 +70,7 @@ public class Main {
 
                 // Opción 7: Añadir a Favoritos
                 case 7: 
-                    if(eventos.isEmpty() || usuarios.isEmpty()) {
-                        System.out.println("No hay eventos o usuarios registrados.");
-                        break;
-                    }
-                    System.out.print("Ingrese el email del usuario: ");
-                    String emailFav = scanner.nextLine();
-                    if (!usuarios.containsKey(emailFav)) {
-                        System.out.println("Error: El usuario no existe.");
-                        break;
-                    }
-
-                    System.out.println("\n ============= Lista de Eventos =============");
-                    for (Evento evento : eventos.values()) {
-                        System.out.println("ID: " + evento.getId() + " | " + evento.getTitulo() + " | " + evento.getFecha());
-                    }
-                    System.out.print("Ingrese el ID del evento a añadir a favoritos: ");
-                    int idFav = scanner.nextInt();
-                    scanner.nextLine();
-
-                    if (!eventos.containsKey(idFav)) {
-                        System.out.println("Error: El evento no existe.");
-                        break;
-                    }
-
-                    Favorito nuevoFavorito = new Favorito(emailFav, idFav);
-                    favoritos.add(nuevoFavorito);
-                    System.out.println("Evento añadido a favoritos correctamente.");
+                    añadirEventoAFavoritos(scanner, usuarios, eventos, favoritos);
                     break;
                 
                 // Opción 8: Eliminar de Favoritos
@@ -238,6 +212,34 @@ public class Main {
 
     }    
 
+    //Metodo para añadir a favoritos
+    public static void añadirEventoAFavoritos(Scanner scanner, Map<String, Usuario> usuarios, Map<Integer, Evento> eventos, ArrayList<Favorito> favoritos) {
+        if(eventos.isEmpty() || usuarios.isEmpty()) {
+            System.out.println("No hay eventos o usuarios registrados.");
+            return;
+        }
 
-    
+        System.out.print("Ingrese el email del usuario: ");
+        String emailFav = scanner.nextLine();
+        if (!usuarios.containsKey(emailFav)) {
+            System.out.println("Error: El usuario no existe.");
+            return;
+        }
+
+        Evento.mostrarEventos(new ArrayList<>(eventos.values()));
+
+        System.out.print("Ingrese el ID del evento a añadir a favoritos: ");
+        int idFav = scanner.nextInt();
+        scanner.nextLine();
+
+        if (!eventos.containsKey(idFav)) {
+            System.out.println("Error: El evento no existe.");
+            return;
+        }
+
+        Favorito nuevoFavorito = Favorito.crearFavorito(emailFav, idFav);
+        favoritos.add(nuevoFavorito);
+        System.out.println("Evento añadido a favoritos correctamente.");
+
+    }
 }
