@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Galeria {
@@ -52,6 +53,19 @@ public class Galeria {
         System.out.print("Ingrese el título de la galería: ");
         String titulo = scanner.nextLine();
         return new Galeria(idGaleria, titulo, idEvento);
+    }
+
+    // Método para listar galerias de un evento
+    public static void listarGaleriasEvento(Evento evento) {
+        ArrayList <Galeria> galerias = evento.getGalerias();
+         if (galerias.isEmpty()) {
+             System.out.println("No hay galerías disponibles para este evento.");
+         } else { 
+             System.out.println("\n-------- Galerías del evento: " + evento.getTitulo() + " --------");
+             for (Galeria galeria : galerias) {
+                 System.out.println("ID: " + galeria.getId() + " | " + galeria.getTitulo());
+             }
+         }
     }
 
     

@@ -94,7 +94,7 @@ public class Evento {
         if (eventos.isEmpty()) {
             System.out.println("No hay eventos disponibles.");
         } else {
-            System.out.println("Eventos disponibles:");
+            System.out.println("\n-------- Eventos disponibles --------");
             for (Evento evento : eventos) {
                 System.out.println("ID: " + evento.getId() + " | " + evento.getTitulo() + " | " + evento.getFecha());
             }

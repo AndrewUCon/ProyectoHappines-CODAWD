@@ -65,51 +65,7 @@ public class Main {
 
                 // Opción 6: Eliminar galería
                 case 6:
-                    if (eventos.isEmpty()) {
-                        System.out.println("No hay eventos registrados.");
-                        break;
-                    }
-                    System.out.println("\n ============= Lista de Eventos =============");
-                    for (Evento evento : eventos.values()) {
-                        System.out.println("ID: " + evento.getId() + " | " + evento.getTitulo() + " | " + evento.getFecha());
-                    }   
-                    System.out.println("Ingrese el ID del evento del que desea eliminar la galería: ");
-                    int idEventoEliminarGaleria = scanner.nextInt();
-                    scanner.nextLine();
-
-                    if (!eventos.containsKey(idEventoEliminarGaleria)) {
-                        System.out.println("Error: El evento no existe.");
-                        break;
-                    }
-
-                    ArrayList<Galeria> galeriasEvento = eventos.get(idEventoEliminarGaleria).getGalerias();
-                    if (galeriasEvento.isEmpty()) {
-                        System.out.println("No hay galerías registradas para este evento.");
-                        break;
-                    }
-
-                    System.out.println("\n ============= Galerías del Evento =============");
-                    for (Galeria galeria : galeriasEvento) {
-                        System.out.println("ID: " + galeria.getId() + " | " + galeria.getTitulo());
-                    }
-                    System.out.println("Ingrese el ID de la galería a eliminar: ");
-                    int idEliminarGaleria = scanner.nextInt();
-                    scanner.nextLine();
-
-                    Galeria galeriaAEliminar = null;
-                    for (Galeria galeria : galeriasEvento) {
-                        if (galeria.getId() == idEliminarGaleria) {
-                            galeriaAEliminar = galeria;
-                            break;
-                        }
-                    }
-
-                    if (galeriaAEliminar == null) {
-                        System.out.println("Error: La galería no existe.");
-                    } else {
-                        galeriasEvento.remove(galeriaAEliminar);
-                        System.out.println("Galería eliminada correctamente.");
-                    }
+                    eliminarGaleriaEvento(scanner, eventos);
                     break;
 
                 // Opción 7: Añadir a Favoritos
@@ -218,6 +174,8 @@ public class Main {
             }
     }
 
+
+    // Método para añadir una galería a un evento
     public static void añadirGaleriaEvento (Scanner scanner, Map<Integer, Evento> eventos) {
             if (eventos.isEmpty()) {
                 System.out.println("No hay eventos registrados.");
@@ -240,6 +198,46 @@ public class Main {
             }
 
     }
+
+    // Metodo para eliminar una galería de un evento
+    public static void eliminarGaleriaEvento(Scanner scanner, Map<Integer, Evento> eventos) {
+        if (eventos.isEmpty()) {
+            System.out.println("No hay eventos registrados.");
+            return;
+        }
+        Evento.mostrarEventos(new ArrayList<>(eventos.values()));
+
+        System.out.print("Ingrese el ID del evento del que desea eliminar una galería: ");
+        int idEventoEliminarGaleria = scanner.nextInt();
+        scanner.nextLine();
+
+        if (!eventos.containsKey(idEventoEliminarGaleria)) {
+            System.out.println("Error: El evento no existe.");
+            return;
+        }
+
+        Evento eventoSeleccionado = eventos.get(idEventoEliminarGaleria);
+        Galeria.listarGaleriasEvento(eventoSeleccionado);
+
+        if (eventoSeleccionado.getGalerias().isEmpty()) {
+            System.out.println("No hay galerías registradas para este evento.");
+            return;
+        }
+
+        System.out.print("Ingrese el ID de la galería a eliminar: ");
+        int idEliminarGaleria = scanner.nextInt();
+        scanner.nextLine();
+
+        boolean galeriaEliminada = eventoSeleccionado.getGalerias().removeIf(galeria -> galeria.getId() == idEliminarGaleria);
+
+        if (galeriaEliminada) {
+            System.out.println("Galería eliminada correctamente.");
+        } else {
+            System.out.println("Error: La galería no existe en este evento.");
+        }
+
+    }    
+
 
     
 }
