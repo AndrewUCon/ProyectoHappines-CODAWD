@@ -48,17 +48,8 @@ public class Main {
                 
                 // Opción 3: Añadir Evento
                 case 3: 
-                    System.out.print("Ingrese la fecha del evento (dd/mm/yyyy): ");
-                    String fecha = scanner.nextLine();
-                    System.out.print("Título del evento: ");
-                    String titulo = scanner.nextLine();
-                    System.out.print("Ubicación del evento: ");
-                    String ubicacion = scanner.nextLine();
-                    System.out.print("Descripción para el evento: ");
-                    String descripcion = scanner.nextLine();
-
                     contadorEventos++;
-                    Evento nuevoEvento = new Evento(contadorEventos, fecha, titulo, ubicacion, descripcion);
+                    Evento nuevoEvento = Evento.crearEvento(scanner, contadorEventos);
                     eventos.put(contadorEventos, nuevoEvento);
                     System.out.println("Evento creado exitosamente con ID: " + contadorEventos);
                     break;

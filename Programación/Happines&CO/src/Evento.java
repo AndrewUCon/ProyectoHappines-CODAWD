@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Evento {
     
@@ -72,6 +73,20 @@ public class Evento {
     @Override
     public String toString() {
         return "Evento: " + titulo + ", Fecha: " + fecha + ", Ubicación: " + ubicacion + ", Descripción: " + descripcion;
+    }
+
+    // Metodo para añadir un Evento 
+    public static Evento crearEvento (Scanner scanner, int id) {
+        System.out.print("Ingrese la fecha del evento (dd/mm/yyyy): ");
+        String fecha = scanner.nextLine();
+        System.out.print("Título del evento: ");
+        String titulo = scanner.nextLine();
+        System.out.print("Ubicación del evento: ");
+        String ubicacion = scanner.nextLine();
+        System.out.print("Descripción para el evento: ");
+        String descripcion = scanner.nextLine();
+        return new Evento(id, fecha, titulo, ubicacion, descripcion);
+
     }
     
     
