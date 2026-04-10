@@ -49,10 +49,7 @@ public class Main {
                 
                 // Opción 3: Añadir Evento
                 case 3: 
-                    contadorEventos++;
-                    Evento nuevoEvento = Evento.crearEvento(scanner, contadorEventos);
-                    eventos.put(contadorEventos, nuevoEvento);
-                    System.out.println("Evento creado exitosamente con ID: " + contadorEventos);
+                    añadirEvento(scanner, eventos);
                     break;
                 
 
@@ -191,7 +188,16 @@ public class Main {
         } while (opcion != 9);
 
 
-    }   
+    }  
+    
+    
+    // Metodo para añadir un Evento
+    public static void añadirEvento(Scanner scanner, HashMap<Integer, Evento> eventos) {
+        contadorEventos++;
+        Evento nuevoEvento = Evento.crearEvento(scanner, contadorEventos);
+        eventos.put(contadorEventos, nuevoEvento);
+        System.out.println("Evento creado exitosamente con ID: " + contadorEventos);
+    }
     
     // Método para eliminar un Evento
     public static void eliminarEvento(HashMap<Integer, Evento> eventos, int id, Scanner scanner) {
@@ -235,4 +241,6 @@ public class Main {
             }
 
     }
+
+    
 }
