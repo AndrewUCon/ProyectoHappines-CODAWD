@@ -75,34 +75,7 @@ public class Main {
                 
                 // Opción 8: Eliminar de Favoritos
                 case 8:
-                    if (favoritos.isEmpty()) {
-                        System.out.println("No hay eventos en favoritos.");
-                        break;
-                    }
-                    System.out.print("Ingrese el email del usuario: ");
-                    String emailEliminarFav = scanner.nextLine();
-                    if (!usuarios.containsKey(emailEliminarFav)) {
-                        System.out.println("Error: El usuario no existe.");
-                        break;
-                    }
-                    System.out.print("Ingrese el ID del evento a eliminar de favoritos: ");
-                    int idEliminarFav = scanner.nextInt();
-                    scanner.nextLine();
-
-                    Favorito favoritoAEliminar = null;
-                    for (Favorito favorito : favoritos) {
-                        if (favorito.getCorreoUsuario().equals(emailEliminarFav) && favorito.getIdEvento() == idEliminarFav) {
-                            favoritoAEliminar = favorito;
-                            break;
-                        }
-                    }
-
-                    if (favoritoAEliminar == null) {
-                        System.out.println("Error: El evento no está en favoritos.");
-                    } else {
-                        favoritos.remove(favoritoAEliminar);
-                        System.out.println("Evento eliminado de favoritos correctamente.");
-                    }
+                    eliminarFavorito(scanner, usuarios, eventos, favoritos);
                     break;
                 
                 // Opción 9: Salir
@@ -241,5 +214,33 @@ public class Main {
         favoritos.add(nuevoFavorito);
         System.out.println("Evento añadido a favoritos correctamente.");
 
+    }
+
+    // Método para eliminar un favorito
+    public static void eliminarFavorito(Scanner scanner, Map<String, Usuario> usuarios, Map<Integer, Evento> eventos, ArrayList<Favorito> favoritos) {
+        if (favoritos.isEmpty()) {
+            System.out.println("No hay eventos en favoritos.");
+            return;
+        }
+
+        System.out.print("Ingrese el email del usuario: ");
+        String emailEliminarFav = scanner.nextLine();
+        
+        if (!usuarios.containsKey(emailEliminarFav)) {
+            System.out.println("Error: El usuario no existe.");
+            return;
+        }
+
+        Favorito.mostrarFavoritosUsuario(emailEliminarFav, favoritos);
+        System.out.print("Ingrese el ID del evento a eliminar de favoritos: ");
+        int idEliminarFav = scanner.nextInt(); 
+        scanner.nextLine();
+
+        boolean favoritoEliminado = favoritos.removeIf(favorito -> favorito.getCorreoUsuario().equalsIgnoreCase(emailEliminarFav) && favorito.getIdEvento() == idEliminarFav);
+        if (favoritoEliminado) {
+            System.out.println("Evento eliminado de favoritos correctamente.");
+        } else {
+            System.out.println("Error: El evento no está en favoritos.");
+        }
     }
 }

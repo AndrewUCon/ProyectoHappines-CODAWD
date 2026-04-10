@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Favorito {
     
     // Atributos
@@ -38,6 +40,22 @@ public class Favorito {
     // Método para crear un nuevo favorito
     public static Favorito crearFavorito(String correoUsuario, int idEvento) {
         return new Favorito(correoUsuario, idEvento);
+    }
+
+    // Método para mostrar los favoritos de un usuario
+    public static void mostrarFavoritosUsuario(String correoUsuario, List<Favorito> favoritos) {
+        System.out.println("\n-------- Favoritos de " + correoUsuario + " --------");
+        boolean tieneFavoritos = false;
+        for (Favorito favorito : favoritos) {
+            if (favorito.getCorreoUsuario().equalsIgnoreCase(correoUsuario)) {
+                System.out.println("Evento ID: " + favorito.getIdEvento());
+                tieneFavoritos = true;
+            }
+        }
+        if (!tieneFavoritos) {
+            System.out.println("No tienes eventos favoritos.");
+        }
+
     }
 
 }
