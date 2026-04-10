@@ -39,7 +39,7 @@ public class Main {
                 
                 // Opción 1:  Añadir Usuario
                 case 1: 
-                     Usuario.registrarUsuario(scanner, usuarios);               
+                    Usuario.registrarUsuario(scanner, usuarios);               
                     break;
 
                 // Opción 2:Eliminar Usuario
@@ -55,14 +55,13 @@ public class Main {
 
                 // Opción 4: Eliminar Evento
                 case 4: 
-                    
                     eliminarEvento(eventos, contadorEventos, scanner);
                     break;
 
-                    // Opción 5: Añadir galería
-                    case 5: 
-                        añadirGaleriaEvento(scanner, eventos);
-                        break;
+                // Opción 5: Añadir galería
+                case 5: 
+                    añadirGaleriaEvento(scanner, eventos);
+                    break;
 
                 // Opción 6: Eliminar galería
                 case 6:
