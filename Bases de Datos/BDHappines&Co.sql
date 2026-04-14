@@ -90,7 +90,7 @@ INSERT INTO Eventos (Fecha, Titulo, Ubicacion, Descripcion) VALUES
 ('2026-01-24', 'Gasolina Con Capullos', 'Teatro Jovellanos', 'Gasolina con capullos ye una traxedia urbana contemporánea tiñida dhumor agriduz que trata dellos temes dámbitu social'),
 ('2026-06-05', 'Xixón Folk', 'Parque Fluvial de Viesques', 'Disfruta de una noche de música folclórica en el parque fluvial de Viesques.'),
 ('2026-06-15', 'Exposición: Dalí y el Surrealismo', 'Museo Barjola, Gijón', 'Retroespectiva de la obra de Salvador Dalí con más de 80 piezas originales procedentes de museos de todo el mundo.'),
-('2026-06-25', 'Cliclo de Cine Radar: La Tortuga', 'Teatro Campoamos', 'Disfruta de una noche de cine en el teatro Campoamor.');
+('2026-06-25', 'Ciclo de Cine Radar: Los Tortuga', 'Teatro Filarmónica', 'Disfruta de una noche de cine en el teatro Filarmónica.');
 GO
 
 -- ==========================
