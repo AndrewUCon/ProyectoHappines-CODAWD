@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Fuentes — HAPPINESS&Co</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="bg-white text-gris">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-1">
+        <span class="font-logo text-2xl font-black tracking-tight text-gris">HAPPINESS</span>
+        <span class="font-simbolo text-2xl font-black text-rosa">&</span>
+        <span class="font-logo text-2xl font-black tracking-tight text-gris">Co</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html"     class="nav-link hover:text-rosa transition-colors">Inicio</a>
+        <a href="eventos.html"   class="nav-link hover:text-rosa transition-colors">Eventos</a>
+        <a href="historial.html" class="nav-link hover:text-rosa transition-colors">Historial</a>
+        <a href="nosotros.html"  class="nav-link hover:text-rosa transition-colors">Sobre nosotros</a>
+        <a href="fuentes.html"   class="nav-link text-rosa font-semibold">Fuentes</a>
+        <a href="contacto.html"  class="px-5 py-2 bg-rosa text-white rounded-full text-sm font-medium hover:bg-pink-800 transition-colors">Contacto</a>
+      </nav>
+      <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="index.html"     class="hover:text-rosa">Inicio</a>
+      <a href="eventos.html"   class="hover:text-rosa">Eventos</a>
+      <a href="historial.html" class="hover:text-rosa">Historial</a>
+      <a href="nosotros.html"  class="hover:text-rosa">Sobre nosotros</a>
+      <a href="fuentes.html"   class="text-rosa">Fuentes</a>
+      <a href="contacto.html"  class="hover:text-rosa">Contacto</a>
+    </div>
+  </header>
+
+  <!-- TÍTULO SECCIÓN -->
+  <section class="bg-gray-50 border-b border-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-rosa text-sm font-semibold uppercase tracking-widest mb-2">Créditos</p>
+      <h1 class="font-display text-4xl font-black text-gris">Fuentes</h1>
+      <p class="text-gray-500 mt-2 text-sm">Páginas y recursos de donde se han obtenido los textos e imágenes de esta web.</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="max-w-4xl mx-auto px-6 py-14">
+
+    <!-- Fuentes de texto -->
+    <div class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-gris mb-6 pb-3 border-b border-gray-100">Fuentes de texto</h2>
+      <div class="flex flex-col gap-4">
+
+        <a href="https://agendagijon.com" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Agenda Gijón</p>
+            <p class="text-sm text-gray-400 mt-0.5">agendagijon.com — Información sobre eventos culturales en Gijón</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+        <a href="https://www.turismoasturias.es" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Turismo Asturias</p>
+            <p class="text-sm text-gray-400 mt-0.5">turismoasturias.es — Agenda oficial de eventos de Asturias</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+        <a href="https://quefemos.com" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Que Femos</p>
+            <p class="text-sm text-gray-400 mt-0.5">quefemos.com — Agenda de ocio y cultura del occidente de Asturias</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+        <a href="https://feverup.com/es/gijon" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Fever — Gijón</p>
+            <p class="text-sm text-gray-400 mt-0.5">feverup.com — Planes y experiencias en Gijón</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+           <a href="https://www.oviedo.es/teatrofilarmonica" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Agenda - Oviedo</p>
+            <p class="text-sm text-gray-400 mt-0.5">Agenda - Teatro Filarmónica</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Fuentes de imágenes -->
+    <div>
+      <h2 class="font-display text-2xl font-bold text-gris mb-6 pb-3 border-b border-gray-100">Fuentes de imágenes</h2>
+      <div class="flex flex-col gap-4">
+
+        <a href="https://unsplash.com" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Unsplash</p>
+            <p class="text-sm text-gray-400 mt-0.5">unsplash.com — Fotografías de uso libre y gratuito</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+        <a href="https://www.dafont.com" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">DaFont</p>
+            <p class="text-sm text-gray-400 mt-0.5">dafont.com — Tipografías Asenine y Ar Chistry del logotipo</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+        <a href="https://fonts.google.com" target="_blank" rel="noopener"
+           class="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-rosa hover:shadow-md transition-all group">
+          <div>
+            <p class="font-semibold text-gris group-hover:text-rosa transition-colors">Google Fonts</p>
+            <p class="text-sm text-gray-400 mt-0.5">fonts.google.com — Tipografías Playfair Display y DM Sans</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-rosa transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gris text-white mt-10">
+    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="flex items-center gap-1 justify-center md:justify-start mb-2">
+          <span class="font-display text-xl font-black">HAPPINESS</span>
+          <span class="font-display text-xl font-black text-rosa">&</span>
+          <span class="font-display text-xl font-black">Co</span>
+        </div>
+        <p class="text-sm text-gray-400">© 2026 HAPPINESS&Co. Todos los derechos reservados.</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/10 hover:bg-rosa transition-colors flex items-center justify-center">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 hover:bg-rosa transition-colors flex items-center justify-center">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter/X" class="w-10 h-10 rounded-full bg-white/10 hover:bg-rosa transition-colors flex items-center justify-center">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/10 hover:bg-rosa transition-colors flex items-center justify-center">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
