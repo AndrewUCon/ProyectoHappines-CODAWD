@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns="http://www.w3.org/2005/Atom">
+    
+    <channel>
+        <title>HAPPINESS&amp;CO - Próximos Eventos</title>
+        <link>http://localhost:5173/eventos.html</link>
+        <description>Agenda cultural de Gijón y alrededores. Música teatro, exposiciones y mucho más</description>
+        <language>es</language>
+        
+        <!--Evento nº1-->
+        <item>
+            <title>Xixón folk - Festival de floclore en Gijón</title>
+            <link>http://localhost:5173/evento.html</link>
+            <description>Tres días de música y cultura en el Parque Fluvial de Gijón</description>
+            <category>Música</category>
+            <guid>http://localhost:5173/evento.html</guid>
+        </item>
+        
+        <!--Evento nº2-->
+        <item>
+            <title>Exposición "Dalli y el surrealismo en Gijón"</title>
+            <link>http://localhost:5173/evento.html</link>
+            <description>Una muestra de la obra de Salvador Dalí en el Museo de Barjola</description>
+            <category>Exposición</category>
+            <guid>http://localhost:5173/evento.html</guid>
+        </item>
+        
+        <!--Evento nº3-->
+        <item>
+            <title>Ciclo de cine Radar: Los Tortuga</title>
+            <link>http://localhost:5173/evento.html</link>
+            <description>Proyección de la película "Los Tortuga" en el Teatro Filarmónica de Oviedo</description>
+            <category>Cine</category>
+            <guid>http://localhost:5173/evento.html</guid>
+        </item>
+    </channel>
+    
+</rss>
+  
