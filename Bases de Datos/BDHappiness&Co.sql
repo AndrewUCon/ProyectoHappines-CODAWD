@@ -4,11 +4,11 @@
 
 
 -- Creación de la base de datos
-CREATE DATABASE BDHappinesCo;
+CREATE DATABASE BDHappinessCo;
 GO
 
 -- Selección de la base de datos para su uso
-USE BDHappinesCo;
+USE BDHappinessCo;
 GO
 
 -- ==========================
